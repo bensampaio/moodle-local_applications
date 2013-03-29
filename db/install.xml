@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/applications_list/db" VERSION="20130328" COMMENT="XMLDB file for Moodle block/applications_list"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_applications" COMMENT="User applications table info.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="typeid"/>
+        <FIELD NAME="typeid" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="description" NEXT="toolurl"/>
+        <FIELD NAME="toolurl" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" PREVIOUS="typeid" NEXT="icon"/>
+        <FIELD NAME="icon" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" PREVIOUS="toolurl" NEXT="resourcekey"/>
+        <FIELD NAME="resourcekey" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="icon" NEXT="secret"/>
+        <FIELD NAME="secret" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="resourcekey" NEXT="launchcontainer"/>
+        <FIELD NAME="launchcontainer" TYPE="int" LENGTH="2" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" PREVIOUS="secret" NEXT="sendname"/>
+        <FIELD NAME="sendname" TYPE="int" LENGTH="1" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="launchcontainer" NEXT="sendemail"/>
+        <FIELD NAME="sendemail" TYPE="int" LENGTH="1" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="sendname" NEXT="servicesalt"/>
+        <FIELD NAME="servicesalt" TYPE="char" LENGTH="40" NOTNULL="false" SEQUENCE="false" PREVIOUS="sendemail" NEXT="favorite"/>
+        <FIELD NAME="favorite" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="servicesalt" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" PREVIOUS="favorite"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="apptype"/>
+        <KEY NAME="apptype" TYPE="foreign" FIELDS="typeid" REFTABLE="lti_types" REFFIELDS="id" PREVIOUS="primary" NEXT="userid"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" PREVIOUS="apptype"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
