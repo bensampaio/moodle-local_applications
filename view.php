@@ -60,7 +60,7 @@ else {
 				    redirect('launch.php?id=' . $cm->id);
 				} 
 				else {
-				    $PAGE->set_pagelayout('incourse');
+				    $PAGE->set_pagelayout('standard');
 				}
 				
 				//now the page contents

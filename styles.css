@@ -1,0 +1,70 @@
+.applicationbox {
+	width: 100%;
+	padding-top: 1em;
+	margin-top: 15px;
+	border-top: 1px solid #DDD;
+}
+
+.applicationbox .info {
+	float: left;
+	width: 45%;
+	text-align:left;
+}
+
+.applicationbox .summary {
+	float: left;
+	width: 50%;
+	margin-top: 1.2em;
+	text-align:justify;
+}
+
+.applicationbox .options {
+	float: right;
+	width: 5%;
+	text-align:justify;
+}
+
+.applicationbox .name {
+	font-size: 1.2em;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.applicationbox .icon {
+	margin-left: 10px;
+}
+
+.applicationbox .icon {
+	display:block;
+}
+
+.applicationbox .icon img {
+	max-width: 90%;
+	max-height: 100px;
+}
+
+.applicationbox .summary p {
+	margin: 0;
+}
+
+.applicationbox .options a {
+	margin-bottom: 10px;
+	text-align: center;
+	display: block;
+}
+
+.applicationbox .options a img {
+	width: 16px;
+	height: 16px;
+}
+
+#page-local-applications-view .region-content,
+#page-local-applications-view iframe {
+	height: 100%;
+}
+
+#page-local-applications-view iframe {
+	width: 100%;
+	margin: 0 auto;
+	border: 0;
+}

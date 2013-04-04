@@ -11,6 +11,7 @@ $string['pluginname'] = 'Applications';
 
 $string['application'] = 'Application';
 $string['applications'] = 'Applications';
+$string['my-applications'] = 'My Applications';
 
 // Actions
 $string['add-application'] = 'Add New Application';

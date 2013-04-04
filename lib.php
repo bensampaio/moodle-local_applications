@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Library of useful functions
  * @copyright 2012 Bruno Sampaio
@@ -10,6 +9,10 @@
 defined('MOODLE_INTERNAL') || die;
 
 define('APPLICATIONS_TABLE', 'local_applications');
+
+// Add Link to Navigation Block
+global $PAGE;
+if(isloggedin()) $PAGE->navigation->add(get_string('my-applications', 'local_applications'), new moodle_url('/local/applications/index.php'));
 
 /**
  * Verify if applications tables exists.
