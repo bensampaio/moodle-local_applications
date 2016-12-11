@@ -1,9 +1,8 @@
-APPLICATIONS - MOODLE LOCAL
+# APPLICATIONS - MOODLE LOCAL
 
 **IMPORTANT**: I am no longer maintaining this plugin. However if you require changes to it you can submit a Merge Request and I will gladly have a look into it.
 
-DESCRIPTION
------------
+## DESCRIPTION
 
 This local plugin introduces the application concept into Moodle. It allows users to add, edit, remove, or access external applications without leaving Moodle. For an application added to Moodle with this plugin can also be provided the information needed to automatically authenticate the user on the application when it is accessed. For this the application must support the IMS LTI standard (http://www.imsglobal.org/lti) and must allow users to be authenticated from external systems using this standard. The process to add applications to Moodle with this feature is very similar to the creation of "External Tool" activities in a course.
 
@@ -14,8 +13,7 @@ To manage applications was also created a Moodle block that provides the user a 
 I recommend you use this plugin with Cubic, a theme for Moodle that I also created (https://moodle.org/plugins/view.php?plugin=theme_cubic).
 
 
-CONTENTS ORGANISATION
----------------------
+## CONTENTS ORGANISATION
 
 	FOLDERS:
 	- db: contains the "install.xml" file with applications table structure;
